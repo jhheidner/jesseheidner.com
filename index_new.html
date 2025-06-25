@@ -18,7 +18,6 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#business-tools" class="nav-link">Business Tools</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
@@ -146,81 +145,6 @@
                         <div class="feature">✓ CI/CD integration</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Tools Section -->
-    <section id="business-tools" class="business-tools">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Business Tools & Solutions</h2>
-                <p class="section-description">Custom digital solutions designed to streamline your business operations and enhance customer engagement.</p>
-            </div>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="tool-title">Custom Chatbots</h3>
-                    <p class="tool-description">Intelligent AI-powered chatbots tailored to your business needs, providing 24/7 customer support and automated assistance.</p>
-                    <div class="tool-features">
-                        <div class="feature">✓ Natural language processing</div>
-                        <div class="feature">✓ Multi-platform integration</div>
-                        <div class="feature">✓ Analytics & reporting</div>
-                        <div class="feature">✓ Custom training on your data</div>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="tool-title">Website Creation</h3>
-                    <p class="tool-description">Professional, responsive websites built with modern technologies and optimized for performance, SEO, and user experience.</p>
-                    <div class="tool-features">
-                        <div class="feature">✓ Responsive design</div>
-                        <div class="feature">✓ SEO optimization</div>
-                        <div class="feature">✓ Performance optimization</div>
-                        <div class="feature">✓ Content management systems</div>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="tool-title">Process Automation</h3>
-                    <p class="tool-description">Streamline your business workflows with custom automation solutions that reduce manual tasks and improve efficiency.</p>
-                    <div class="tool-features">
-                        <div class="feature">✓ Workflow automation</div>
-                        <div class="feature">✓ Data processing</div>
-                        <div class="feature">✓ Integration solutions</div>
-                        <div class="feature">✓ Custom dashboards</div>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3 class="tool-title">Analytics & Insights</h3>
-                    <p class="tool-description">Transform your data into actionable insights with custom analytics solutions and interactive dashboards.</p>
-                    <div class="tool-features">
-                        <div class="feature">✓ Custom reporting</div>
-                        <div class="feature">✓ Real-time analytics</div>
-                        <div class="feature">✓ Data visualization</div>
-                        <div class="feature">✓ Performance metrics</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="tools-cta">
-                <h3>Ready to Transform Your Business?</h3>
-                <p>Let's discuss how these custom solutions can streamline your operations and drive growth.</p>
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> Get Started
-                </a>
             </div>
         </div>
     </section>
@@ -353,7 +277,7 @@
                 
                 <div class="about-stats">
                     <div class="stat-card">
-                        <div class="stat-number">20</div>
+                        <div class="stat-number">5+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-card">
@@ -361,8 +285,8 @@
                         <div class="stat-label">Projects Tested</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">3x</div>
-                        <div class="stat-label">Deployment Speed</div>
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Bug Detection Rate</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">24/7</div>
@@ -399,7 +323,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p><a href="mailto:jhheidner@gmail.com">jhheidner@gmail.com</a></p>
+                            <p>Available upon request</p>
                         </div>
                     </div>
                     
@@ -415,31 +339,26 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form class="form" action="https://formspree.io/f/xgvyppzo" method="POST">
+                    <form class="form">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <select name="service" required>
+                            <select id="service" name="service" required>
                                 <option value="">Select Service</option>
-                                <option value="Test Automation">Test Automation</option>
-                                <option value="Quality Assurance">Quality Assurance</option>
-                                <option value="QA Consulting">QA Consulting</option>
-                                <option value="Development Project">Development Project</option>
+                                <option value="automation">Test Automation</option>
+                                <option value="qa">Quality Assurance</option>
+                                <option value="consulting">QA Consulting</option>
+                                <option value="development">Development Project</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Tell me about your project" rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Tell me about your project" rows="5" required></textarea>
                         </div>
-                        <input type="hidden" name="_next" value="https://jesseheidner.com/thank-you.html">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
                         <button type="submit" class="btn btn-primary">Send Message</button>
-                        <p style="text-align: center; margin-top: 1rem; color: #a1a1aa; font-size: 0.9rem;">
-                            Or email directly: <a href="mailto:jhheidner@gmail.com?subject=Project Inquiry" style="color: #3b82f6;">jhheidner@gmail.com</a>
-                        </p>
                     </form>
                 </div>
             </div>
