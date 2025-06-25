@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesse Heidner - Senior QA Expert & Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Jesse Heidner</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#business-tools" class="nav-link">Business Tools</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Quality Assurance Excellence. <span class="gradient-text">Built to Scale.</span></h1>
+                <p class="hero-description">Senior QA Expert specializing in automated testing, quality frameworks, and development projects that ensure your software performs flawlessly, every time.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <span class="window-title">qa-automation.spec.js</span>
+                    </div>
+                    <div class="code-content">
+                        <div class="code-line">
+                            <span class="line-number">1</span>
+                            <span class="code-text"><span class="keyword">describe</span>(<span class="string">'User Login Flow'</span>, () => {</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">2</span>
+                            <span class="code-text">  <span class="keyword">it</span>(<span class="string">'should authenticate successfully'</span>, <span class="keyword">async</span> () => {</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">3</span>
+                            <span class="code-text">    <span class="keyword">await</span> page.goto(<span class="string">'/login'</span>);</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">4</span>
+                            <span class="code-text">    <span class="keyword">await</span> expect(page).toHaveTitle(<span class="string">'Login'</span>);</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">5</span>
+                            <span class="code-text">    <span class="comment">// Test passes ✓</span></span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">6</span>
+                            <span class="code-text">  });</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">7</span>
+                            <span class="code-text">});</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional QA Services</h2>
+                <p class="section-description">Comprehensive testing solutions to ensure your software meets the highest quality standards.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">Test Automation</h3>
+                    <p class="service-description">Design and implement comprehensive automated testing frameworks using Playwright, Selenium, and modern testing tools.</p>
+                    <div class="service-features">
+                        <div class="feature">✓ End-to-end testing</div>
+                        <div class="feature">✓ API testing</div>
+                        <div class="feature">✓ Performance testing</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Quality Assurance</h3>
+                    <p class="service-description">Comprehensive manual testing strategies ensuring your application works perfectly across all scenarios and platforms.</p>
+                    <div class="service-features">
+                        <div class="feature">✓ Functional testing</div>
+                        <div class="feature">✓ User acceptance testing</div>
+                        <div class="feature">✓ Cross-browser testing</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">QA Consulting</h3>
+                    <p class="service-description">Strategic guidance on QA processes, tool selection, and team training to optimize your testing operations.</p>
+                    <div class="service-features">
+                        <div class="feature">✓ Process optimization</div>
+                        <div class="feature">✓ Tool evaluation</div>
+                        <div class="feature">✓ Team training</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Development Projects</h3>
+                    <p class="service-description">Custom development solutions with built-in quality assurance, ensuring robust and reliable applications.</p>
+                    <div class="service-features">
+                        <div class="feature">✓ Full-stack development</div>
+                        <div class="feature">✓ Testing frameworks</div>
+                        <div class="feature">✓ CI/CD integration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Tools Section -->
+    <section id="business-tools" class="business-tools">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Business Tools & Solutions</h2>
+                <p class="section-description">Custom digital solutions designed to streamline your business operations and enhance customer engagement.</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="tool-title">Custom Chatbots</h3>
+                    <p class="tool-description">Intelligent AI-powered chatbots tailored to your business needs, providing 24/7 customer support and automated assistance.</p>
+                    <div class="tool-features">
+                        <div class="feature">✓ Natural language processing</div>
+                        <div class="feature">✓ Multi-platform integration</div>
+                        <div class="feature">✓ Analytics & reporting</div>
+                        <div class="feature">✓ Custom training on your data</div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="tool-title">Website Creation</h3>
+                    <p class="tool-description">Professional, responsive websites built with modern technologies and optimized for performance, SEO, and user experience.</p>
+                    <div class="tool-features">
+                        <div class="feature">✓ Responsive design</div>
+                        <div class="feature">✓ SEO optimization</div>
+                        <div class="feature">✓ Performance optimization</div>
+                        <div class="feature">✓ Content management systems</div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="tool-title">Process Automation</h3>
+                    <p class="tool-description">Streamline your business workflows with custom automation solutions that reduce manual tasks and improve efficiency.</p>
+                    <div class="tool-features">
+                        <div class="feature">✓ Workflow automation</div>
+                        <div class="feature">✓ Data processing</div>
+                        <div class="feature">✓ Integration solutions</div>
+                        <div class="feature">✓ Custom dashboards</div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="tool-title">Analytics & Insights</h3>
+                    <p class="tool-description">Transform your data into actionable insights with custom analytics solutions and interactive dashboards.</p>
+                    <div class="tool-features">
+                        <div class="feature">✓ Custom reporting</div>
+                        <div class="feature">✓ Real-time analytics</div>
+                        <div class="feature">✓ Data visualization</div>
+                        <div class="feature">✓ Performance metrics</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tools-cta">
+                <h3>Ready to Transform Your Business?</h3>
+                <p>Let's discuss how these custom solutions can streamline your operations and drive growth.</p>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Get Started
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">Showcasing my latest work in quality assurance and development.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="project-title">Sony Playwright Tests</h3>
+                        <span class="project-type">Test Automation</span>
+                    </div>
+                    <p class="project-description">Comprehensive Playwright testing framework developed for Sony Music Publishing, featuring automated end-to-end tests and robust quality assurance protocols.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Playwright</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/jhheidner/sony-playwright-tests" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 class="project-title">QA Automation Framework</h3>
+                        <span class="project-type">Framework Development</span>
+                    </div>
+                    <p class="project-description">Custom-built testing framework designed for scalable quality assurance processes, featuring parallel test execution and comprehensive reporting.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Selenium</span>
+                        <span class="tech-tag">TestNG</span>
+                        <span class="tech-tag">Java</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/jhheidner" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="project-title">Mobile Testing Suite</h3>
+                        <span class="project-type">Mobile QA</span>
+                    </div>
+                    <p class="project-description">Comprehensive mobile application testing suite covering iOS and Android platforms with automated UI testing and performance monitoring.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Appium</span>
+                        <span class="tech-tag">Cypress</span>
+                        <span class="tech-tag">React Native</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/jhheidner" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="github-cta">
+                <h3>Explore More Projects</h3>
+                <p>Check out my GitHub profile for additional projects and contributions to the QA community.</p>
+                <a href="https://github.com/jhheidner" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-github"></i> Visit GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Jesse Heidner</h2>
+                    <p class="about-description">
+                        As a Senior Quality Assurance Tester and Expert, I bring years of experience in ensuring software quality and reliability. My expertise spans automated testing frameworks, manual testing strategies, and development projects that prioritize quality from the ground up.
+                    </p>
+                    <p class="about-description">
+                        I specialize in building robust testing frameworks using modern tools like Playwright, Selenium, and custom automation solutions. My approach combines technical excellence with strategic thinking to deliver comprehensive QA solutions that scale with your business needs.
+                    </p>
+                    
+                    <div class="skills-section">
+                        <h3>Core Expertise</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Test Automation (Playwright, Selenium)</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>API Testing & Performance Testing</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>CI/CD Integration & DevOps</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cross-browser & Mobile Testing</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Quality Process Optimization</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Full-stack Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">20</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Projects Tested</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Bug Detection Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Quality Monitoring</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Build Quality Together</h2>
+                <p class="section-description">Ready to elevate your software quality? Let's discuss your testing needs and development projects.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p>github.com/jhheidner</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>Available upon request</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Remote & On-site Available</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select Service</option>
+                                <option value="automation">Test Automation</option>
+                                <option value="qa">Quality Assurance</option>
+                                <option value="consulting">QA Consulting</option>
+                                <option value="development">Development Project</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tell me about your project" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jesse Heidner</h3>
+                    <p>Senior QA Expert dedicated to delivering exceptional software quality and innovative testing solutions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Test Automation</a></li>
+                        <li><a href="#services">Quality Assurance</a></li>
+                        <li><a href="#services">QA Consulting</a></li>
+                        <li><a href="#services">Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/jhheidner" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#contact">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jesse Heidner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
