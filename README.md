@@ -24,7 +24,7 @@ jhwebsite/
 
 ## 🎨 Sections
 
-### 1. **Hero Section**
+### 1. **About Section**
 - Compelling headline highlighting QA expertise
 - Interactive code window showing Playwright test example
 - Call-to-action buttons for services and projects
