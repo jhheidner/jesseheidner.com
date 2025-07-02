@@ -8,15 +8,34 @@ test.describe('Jesse Heidner Website - External Links Tests', () => {
   });
 
   test('should have functional GitHub links', async ({ context, page }) => {
-    // Test Sony Playwright Tests GitHub link
-    const [newPage] = await Promise.all([
+    // Navigate to projects section first
+    await page.getByRole('link', { name: 'Projects', exact: true }).click();
+    
+    // Test Portfolio Website Test Suite GitHub link (featured project)
+    const viewSourceLink = page.getByRole('link', { name: 'View Source' }).first();
+    await expect(viewSourceLink).toBeVisible();
+    
+    const [newPage1] = await Promise.all([
       context.waitForEvent('page'),
-      page.getByRole('link', { name: 'View Code' }).first().click()
+      viewSourceLink.click()
     ]);
     
-    await newPage.waitForLoadState();
-    expect(newPage.url()).toBe('https://github.com/jhheidner/sony-playwright-tests');
-    await newPage.close();
+    await newPage1.waitForLoadState();
+    expect(newPage1.url()).toBe('https://github.com/jhheidner/jesseheidner.com');
+    await newPage1.close();
+    
+    // Test Sony Playwright Tests GitHub link
+    const viewCodeLink = page.getByRole('link', { name: 'View Code' }).first();
+    await expect(viewCodeLink).toBeVisible();
+    
+    const [newPage2] = await Promise.all([
+      context.waitForEvent('page'),
+      viewCodeLink.click()
+    ]);
+    
+    await newPage2.waitForLoadState();
+    expect(newPage2.url()).toBe('https://github.com/jhheidner/sony-playwright-tests');
+    await newPage2.close();
   });
 
   test('should verify all GitHub profile links', async ({ page }) => {
@@ -31,6 +50,17 @@ test.describe('Jesse Heidner Website - External Links Tests', () => {
     await expect(visitGithubLinks.first()).toHaveAttribute('href', 'https://github.com/jhheidner');
   });
 
+  test('should verify featured project links', async ({ page }) => {
+    // Test Portfolio Website Test Suite links
+    const viewSourceLink = page.getByRole('link', { name: 'View Source' }).first();
+    await expect(viewSourceLink).toBeVisible();
+    await expect(viewSourceLink).toHaveAttribute('href', 'https://github.com/jhheidner/jesseheidner.com');
+    
+    const liveCILink = page.getByRole('link', { name: 'Live CI/CD' }).first();
+    await expect(liveCILink).toBeVisible();
+    await expect(liveCILink).toHaveAttribute('href', 'https://github.com/jhheidner/jesseheidner.com/actions');
+  });
+
   test('should verify Sony Playwright Tests link opens correctly', async ({ page }) => {
     const sonyProjectLink = page.getByRole('link', { name: 'View Code' }).first();
     await expect(sonyProjectLink).toBeVisible();
@@ -40,6 +70,8 @@ test.describe('Jesse Heidner Website - External Links Tests', () => {
   test('should have properly configured external link attributes', async ({ page }) => {
     // GitHub links should open in new tabs (target="_blank")
     const externalLinks = [
+      page.getByRole('link', { name: 'View Source' }).first(),
+      page.getByRole('link', { name: 'Live CI/CD' }).first(),
       page.getByRole('link', { name: 'View Code' }).first(),
       page.getByRole('link', { name: 'View Profile' }).first(),
       page.getByRole('link', { name: 'Learn More' }).first(),
@@ -84,6 +116,8 @@ test.describe('Jesse Heidner Website - External Links Tests', () => {
     
     // Verify all project-related external links
     const projectLinks = [
+      { name: 'View Source', expectedUrl: 'https://github.com/jhheidner/jesseheidner.com' },
+      { name: 'Live CI/CD', expectedUrl: 'https://github.com/jhheidner/jesseheidner.com/actions' },
       { name: 'View Code', expectedUrl: 'https://github.com/jhheidner/sony-playwright-tests' },
       { name: 'View Profile', expectedUrl: 'https://github.com/jhheidner' },
       { name: 'Learn More', expectedUrl: 'https://github.com/jhheidner' },

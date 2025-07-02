@@ -89,29 +89,44 @@ test.describe('Jesse Heidner Website - Content Verification Tests', () => {
     await expect(page.getByRole('heading', { name: 'Featured Projects' })).toBeVisible();
     await expect(page.getByText('Showcasing my latest work in quality assurance and development.')).toBeVisible();
     
+    // Verify Portfolio Website Test Suite (featured project)
+    await expect(page.getByRole('heading', { name: 'Portfolio Website Test Suite', level: 3 })).toBeVisible();
+    await expect(page.getByText('Full CI/CD Automation')).toBeVisible();
+    await expect(page.getByText('Complete end-to-end test automation for this portfolio website')).toBeVisible();
+    await expect(page.getByText('✅ 50 End-to-End Tests')).toBeVisible();
+    await expect(page.getByText('✅ CI/CD Pipeline')).toBeVisible();
+    await expect(page.getByText('✅ 100% Test Coverage')).toBeVisible();
+    await expect(page.getByText('✅ Responsive Testing')).toBeVisible();
+    await expect(page.locator('#projects .tech-tag').getByText('TypeScript', { exact: true })).toBeVisible();
+    await expect(page.locator('#projects .tech-tag').getByText('GitHub Actions', { exact: true })).toBeVisible();
+    await expect(page.locator('#projects .tech-tag').getByText('Page Object Model', { exact: true })).toBeVisible();
+    
     // Verify Sony Playwright Tests project
-    await expect(page.getByRole('heading', { name: 'Sony Playwright Tests', level: 3 })).toBeVisible();
-    await expect(page.locator('#projects').getByText('Test Automation')).toBeVisible();
-    await expect(page.getByText('Comprehensive Playwright testing framework developed for Sony Music Publishing')).toBeVisible();
-    await expect(page.locator('#projects .tech-tag').getByText('Playwright', { exact: true })).toBeVisible();
-    await expect(page.getByText('JavaScript')).toBeVisible();
-    await expect(page.getByText('HTML')).toBeVisible();
+    const sonyProjectCard = page.locator('.project-card').filter({ hasText: 'Sony Playwright Tests' });
+    await expect(sonyProjectCard.getByRole('heading', { name: 'Sony Playwright Tests', level: 3 })).toBeVisible();
+    await expect(sonyProjectCard.getByText('Test Automation', { exact: true })).toBeVisible();
+    await expect(sonyProjectCard.getByText('Comprehensive Playwright testing framework developed for Sony Music Publishing')).toBeVisible();
+    await expect(sonyProjectCard.locator('.tech-tag').getByText('Playwright', { exact: true })).toBeVisible();
+    await expect(sonyProjectCard.getByText('JavaScript')).toBeVisible();
+    await expect(sonyProjectCard.getByText('HTML')).toBeVisible();
     
     // Verify QA Automation Framework project
-    await expect(page.getByRole('heading', { name: 'QA Automation Framework', level: 3 })).toBeVisible();
-    await expect(page.getByText('Framework Development')).toBeVisible();
-    await expect(page.getByText('Custom-built testing framework designed for scalable quality assurance processes')).toBeVisible();
-    await expect(page.locator('#projects .tech-tag').getByText('Selenium', { exact: true })).toBeVisible();
-    await expect(page.locator('#projects .tech-tag').getByText('TestNG', { exact: true })).toBeVisible();
-    await expect(page.locator('#projects .tech-tag').getByText('Java', { exact: true })).toBeVisible();
+    const qaFrameworkCard = page.locator('.project-card').filter({ hasText: 'QA Automation Framework' });
+    await expect(qaFrameworkCard.getByRole('heading', { name: 'QA Automation Framework', level: 3 })).toBeVisible();
+    await expect(qaFrameworkCard.getByText('Framework Development')).toBeVisible();
+    await expect(qaFrameworkCard.getByText('Custom-built testing framework designed for scalable quality assurance processes')).toBeVisible();
+    await expect(qaFrameworkCard.locator('.tech-tag').getByText('Selenium', { exact: true })).toBeVisible();
+    await expect(qaFrameworkCard.locator('.tech-tag').getByText('TestNG', { exact: true })).toBeVisible();
+    await expect(qaFrameworkCard.locator('.tech-tag').getByText('Java', { exact: true })).toBeVisible();
     
     // Verify Mobile Testing Suite project
-    await expect(page.getByRole('heading', { name: 'Mobile Testing Suite', level: 3 })).toBeVisible();
-    await expect(page.getByText('Mobile QA')).toBeVisible();
-    await expect(page.getByText('Comprehensive mobile application testing suite covering iOS and Android platforms')).toBeVisible();
-    await expect(page.getByText('Appium')).toBeVisible();
-    await expect(page.getByText('Cypress')).toBeVisible();
-    await expect(page.getByText('React Native')).toBeVisible();
+    const mobileTestingCard = page.locator('.project-card').filter({ hasText: 'Mobile Testing Suite' });
+    await expect(mobileTestingCard.getByRole('heading', { name: 'Mobile Testing Suite', level: 3 })).toBeVisible();
+    await expect(mobileTestingCard.getByText('Mobile QA')).toBeVisible();
+    await expect(mobileTestingCard.getByText('Comprehensive mobile application testing suite covering iOS and Android platforms')).toBeVisible();
+    await expect(mobileTestingCard.getByText('Appium')).toBeVisible();
+    await expect(mobileTestingCard.getByText('Cypress')).toBeVisible();
+    await expect(mobileTestingCard.getByText('React Native')).toBeVisible();
     
     // Verify GitHub CTA section
     await expect(page.getByRole('heading', { name: 'Explore More Projects', level: 3 })).toBeVisible();
@@ -127,12 +142,13 @@ test.describe('Jesse Heidner Website - Content Verification Tests', () => {
     // Verify about description
     await expect(page.getByText('As a Senior Quality Assurance Tester and Expert')).toBeVisible();
     await expect(page.getByText('I specialize in building robust testing frameworks using modern tools')).toBeVisible();
+    await expect(page.getByText('This portfolio itself showcases my expertise with 50 comprehensive tests')).toBeVisible();
     
     // Verify Core Expertise section
     await expect(page.getByRole('heading', { name: 'Core Expertise', level: 3 })).toBeVisible();
     await expect(page.getByText('Test Automation (Playwright, Selenium)')).toBeVisible();
     await expect(page.getByText('API Testing & Performance Testing')).toBeVisible();
-    await expect(page.getByText('CI/CD Integration & DevOps')).toBeVisible();
+    await expect(page.getByText('CI/CD Integration & GitHub Actions')).toBeVisible();
     await expect(page.getByText('Cross-browser & Mobile Testing')).toBeVisible();
     await expect(page.getByText('Quality Process Optimization')).toBeVisible();
     await expect(page.locator('#about').getByText('Full-stack Development')).toBeVisible();
