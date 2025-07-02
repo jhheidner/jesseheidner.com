@@ -91,4 +91,7 @@ build/
 # /ms-playwright/
 
 # Package lock file (uncomment if your team doesn't track this)
-# package-lock.json 
+# package-lock.json
+
+# GitHub Actions artifacts
+.github/actions-runner/ 

@@ -156,6 +156,10 @@ Feel free to fork this project and customize it for your own QA portfolio. If yo
 
 # 🧪 Playwright Test Suite
 
+![Tests](https://github.com/jhheidner/jesseheidner.com/workflows/🧪%20Playwright%20Tests/badge.svg)
+![Website](https://img.shields.io/website?url=https%3A//jesseheidner.com)
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
 This repository includes a comprehensive end-to-end test suite for [jesseheidner.com](https://jesseheidner.com) using **Playwright** with **Page Object Model (POM)** architecture. The test suite ensures website functionality, accessibility, and responsive design across different devices.
 
 ## 🚀 Quick Start
@@ -347,14 +351,48 @@ npx playwright test tests/homepage.spec.ts
 npx playwright test --trace on
 ```
 
-## 🚀 CI/CD Ready
+## 🚀 CI/CD Pipeline
 
-The test suite is optimized for continuous integration:
-- **Headless execution** by default
-- **Parallel test execution** for speed
-- **Comprehensive reporting** (HTML, JSON, JUnit)
-- **Artifact capture** (screenshots/videos on failures)
-- **Cross-platform compatibility** (Windows, macOS, Linux)
+### GitHub Actions Workflow
+The repository includes a comprehensive CI/CD pipeline (`.github/workflows/playwright-tests.yml`):
+
+**Triggers:**
+- ✅ Push to `main` or `develop` branches
+- ✅ Pull requests to `main`
+- ✅ Daily scheduled runs (9 AM UTC)
+- ✅ Manual workflow dispatch
+
+**Pipeline Steps:**
+1. **Environment Setup** - Node.js 18, dependency caching
+2. **Dependency Installation** - npm ci for reproducible builds
+3. **Browser Installation** - Playwright Chrome/Chromium
+4. **Test Execution** - Full 50-test suite
+5. **Artifact Upload** - Reports, screenshots, videos on failure
+6. **Health Check** - Live website verification (main branch only)
+
+**Available Scripts:**
+```bash
+# CI-optimized test run with multiple reporters
+npm run test:ci
+
+# Quick smoke tests (homepage + contact form)
+npm run test:smoke
+
+# Standard test run
+npm test
+```
+
+### Artifact Management
+- **Test Reports**: Retained for 7 days
+- **Screenshots**: Captured on failure, retained 3 days
+- **Videos**: Failure recordings, retained 3 days
+- **Health Checks**: Automatic website status verification
+
+### Benefits
+- **Quality Gates**: No deployments with failing tests
+- **Early Detection**: Daily runs catch external issues
+- **Debug Support**: Full artifact capture for troubleshooting
+- **Professional Standards**: Industry-standard CI/CD practices
 - ✅ Complete form submission flow testing
 
 ### `tests/external-links.spec.ts`

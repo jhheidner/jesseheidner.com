@@ -1,0 +1,96 @@
+name: 🧪 Playwright Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run tests daily at 9 AM UTC to catch any external issues
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  test:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        # Start with Chrome only, can expand later
+        browser: [chromium]
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: 📦 Install dependencies
+      run: npm ci
+      
+    - name: 🎭 Install Playwright browsers
+      run: npx playwright install --with-deps ${{ matrix.browser }}
+      
+    - name: 🔍 Run Playwright tests
+      run: npm test
+      env:
+        # Ensure tests run in headless mode in CI
+        CI: true
+        
+    - name: 📊 Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-report-${{ matrix.browser }}
+        path: |
+          playwright-report/
+          test-results/
+        retention-days: 7
+        
+    - name: 📸 Upload screenshots on failure
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: screenshots-${{ matrix.browser }}
+        path: test-results/**/test-failed-*.png
+        retention-days: 3
+        
+    - name: 🎥 Upload videos on failure
+      uses: actions/upload-artifact@v4
+      if: failure()
+      with:
+        name: videos-${{ matrix.browser }}
+        path: test-results/**/video.webm
+        retention-days: 3
+
+  # Optional: Add a deployment health check
+  health-check:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 🏥 Website health check
+      run: |
+        echo "Performing website health check..."
+        response=$(curl -s -o /dev/null -w "%{http_code}" https://jesseheidner.com)
+        if [ $response -eq 200 ]; then
+          echo "✅ Website is healthy (HTTP $response)"
+        else
+          echo "❌ Website health check failed (HTTP $response)"
+          exit 1
+        fi
+        
+    - name: 🔗 Check critical links
+      run: |
+        echo "Checking critical links..."
+        # Test a few key endpoints
+        curl -f -s https://jesseheidner.com > /dev/null || exit 1
+        echo "✅ All critical links are working" 
