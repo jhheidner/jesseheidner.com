@@ -1,0 +1,5 @@
+Jesse Heidner is a Senior Quality Assurance Tester and Expert with 20 years of experience ensuring software quality and reliability. He specializes in automated testing frameworks (Playwright, Selenium), manual testing strategies, API and performance testing, CI/CD integration with GitHub Actions, cross-browser and mobile testing, and full-stack development with a quality-first mindset.
+
+He builds robust, scalable QA solutions including custom automation frameworks, end-to-end test suites, and quality process optimization. Notable work includes a portfolio test suite with 50 Playwright tests and full CI/CD automation, Sony Music Publishing Playwright tests, and mobile testing with Appium and Cypress.
+
+Jesse offers professional services in test automation, quality assurance, QA consulting, and development projects. He is available remotely and on-site, and welcomes inquiries from potential clients and employers.

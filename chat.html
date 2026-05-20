@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Jesse Heidner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link"><h2>Jesse Heidner</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="chat.html" class="nav-link active">Chat</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="chat-page">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Chat with Jesse</h1>
+                <p class="section-description">
+                    Ask about QA experience, test automation, projects, or working together.
+                </p>
+                <p class="chat-disclaimer">
+                    <i class="fas fa-robot" aria-hidden="true"></i>
+                    This is an AI assistant trained on Jesse's resume and background—not Jesse in person.
+                    Answers may be incomplete; for hiring or official inquiries, please
+                    <a href="index.html#contact">contact Jesse directly</a>.
+                </p>
+            </div>
+
+            <div class="chat-embed-wrapper">
+                <iframe
+                    id="chat-iframe"
+                    class="chat-iframe"
+                    title="Chat with Jesse Heidner"
+                    src="about:blank"
+                    allow="microphone"
+                ></iframe>
+                <div id="chat-offline" class="chat-offline" hidden>
+                    <i class="fas fa-comments"></i>
+                    <h3>Chat server not running</h3>
+                    <p>Start the Gradio app locally, then refresh this page:</p>
+                    <pre class="chat-command">cd chatbot &amp;&amp; pip install -r requirements.txt &amp;&amp; python app.py</pre>
+                    <p>Deploy to Hugging Face Spaces (see <code>chatbot/HUGGINGFACE_SPACE.md</code>), then update <code>js/chat-config.js</code>.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Contact Jesse directly</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jesse Heidner. <a href="index.html">Back to site</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/chat-config.js"></script>
+    <script>
+        (function () {
+            var iframe = document.getElementById('chat-iframe');
+            var offline = document.getElementById('chat-offline');
+            var params = new URLSearchParams(window.location.search);
+            var embedParam = params.get('embed');
+            var embedUrl;
+
+            if (embedParam === 'local') {
+                embedUrl = window.CHATBOT_EMBED_LOCAL;
+            } else if (embedParam) {
+                embedUrl = embedParam;
+            } else {
+                embedUrl = window.CHATBOT_EMBED_URL || window.CHATBOT_EMBED_LOCAL;
+            }
+
+            iframe.src = embedUrl;
+
+            iframe.addEventListener('error', function () {
+                iframe.hidden = true;
+                offline.hidden = false;
+            });
+        })();
+    </script>
+</body>
+</html>

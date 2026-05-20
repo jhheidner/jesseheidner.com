@@ -16,6 +16,12 @@ playwright/.cache/
 screenshots/
 videos/
 
+# Python chatbot
+chatbot/.venv/
+chatbot/__pycache__/
+__pycache__/
+*.pyc
+
 # Environment variables
 .env
 .env.local
@@ -94,4 +100,10 @@ build/
 # package-lock.json
 
 # GitHub Actions artifacts
-.github/actions-runner/ 
+.github/actions-runner/
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
