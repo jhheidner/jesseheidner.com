@@ -21,6 +21,9 @@ PDF_GLOB = "Jesse_Heidner*.pdf"
 def load_linkedin_pdf() -> str:
     pdfs = sorted(ME_DIR.glob(PDF_GLOB))
     if not pdfs:
+        linkedin_pdf = ME_DIR / "linkedin.pdf"
+        pdfs = [linkedin_pdf] if linkedin_pdf.exists() else []
+    if not pdfs:
         return ""
 
     linkedin = ""

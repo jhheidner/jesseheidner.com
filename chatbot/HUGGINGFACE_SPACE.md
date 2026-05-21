@@ -24,6 +24,7 @@ The Space repository root should look like this:
 
 ```text
 app.py              ← from chatbot/huggingface-space/app.py
+agent.py            ← from chatbot/huggingface-space/agent.py
 context.py          ← from chatbot/huggingface-space/context.py
 requirements.txt    ← from chatbot/huggingface-space/requirements.txt
 README.md           ← from chatbot/huggingface-space/README.md (Space card)
@@ -59,8 +60,11 @@ Upload the same files via the Space **Files** tab on Hugging Face.
 1. Open your Space → **Settings** → **Repository secrets**.
 2. Add secret: `OPENAI_API_KEY` = your OpenAI key.
 3. Optional: `OPENAI_MODEL` = `gpt-4o-mini` (default if unset).
+4. Optional (Pushover notifications): `PUSHOVER_TOKEN` and `PUSHOVER_USER`.
 
 Never commit `.env` or API keys to the Space repo.
+
+**Note:** Do not pin `gradio` in `requirements.txt`. Hugging Face installs `gradio==6.5.1` automatically; adding your own `gradio` version causes a build conflict.
 
 ## 4. Wait for the build
 

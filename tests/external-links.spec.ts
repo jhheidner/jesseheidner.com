@@ -24,6 +24,19 @@ test.describe('Jesse Heidner Website - External Links Tests', () => {
     expect(newPage1.url()).toBe('https://github.com/jhheidner/jesseheidner.com');
     await newPage1.close();
     
+    // Test Hudl repository link
+    const hudlRepoLink = page.getByRole('link', { name: 'View Repository' });
+    await expect(hudlRepoLink).toBeVisible();
+
+    const [hudlPage] = await Promise.all([
+      context.waitForEvent('page'),
+      hudlRepoLink.click()
+    ]);
+
+    await hudlPage.waitForLoadState();
+    expect(hudlPage.url()).toBe('https://github.com/jhheidner/Hudl');
+    await hudlPage.close();
+
     // Test Sony Playwright Tests GitHub link
     const viewCodeLink = page.getByRole('link', { name: 'View Code' }).first();
     await expect(viewCodeLink).toBeVisible();
@@ -72,6 +85,8 @@ test.describe('Jesse Heidner Website - External Links Tests', () => {
     const externalLinks = [
       page.getByRole('link', { name: 'View Source' }).first(),
       page.getByRole('link', { name: 'Live CI/CD' }).first(),
+      page.getByRole('link', { name: 'View Repository' }),
+      page.getByRole('link', { name: 'View on Hugging Face' }),
       page.getByRole('link', { name: 'View Code' }).first(),
       page.getByRole('link', { name: 'View Profile' }).first(),
       page.getByRole('link', { name: 'Learn More' }).first(),

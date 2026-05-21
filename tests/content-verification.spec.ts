@@ -100,6 +100,21 @@ test.describe('Jesse Heidner Website - Content Verification Tests', () => {
     await expect(page.locator('#projects .tech-tag').getByText('TypeScript', { exact: true })).toBeVisible();
     await expect(page.locator('#projects .tech-tag').getByText('GitHub Actions', { exact: true })).toBeVisible();
     await expect(page.locator('#projects .tech-tag').getByText('Page Object Model', { exact: true })).toBeVisible();
+
+    // Verify Career Chat Assistant project
+    const chatProjectCard = page.locator('.project-card').filter({ hasText: 'Career Chat Assistant' });
+    await expect(chatProjectCard.getByRole('heading', { name: 'Career Chat Assistant', level: 3 })).toBeVisible();
+    await expect(chatProjectCard.getByText('AI Virtual Assistant', { exact: true })).toBeVisible();
+    await expect(chatProjectCard.getByText('Virtual chatbot on this portfolio')).toBeVisible();
+    await expect(chatProjectCard.getByRole('link', { name: 'Try the Chat' })).toHaveAttribute('href', /chat\.html/);
+
+    // Verify Hudl Selenium Automation Suite project
+    const hudlProjectCard = page.locator('.project-card').filter({ hasText: 'Hudl Selenium Automation Suite' });
+    await expect(hudlProjectCard.getByRole('heading', { name: 'Hudl Selenium Automation Suite', level: 3 })).toBeVisible();
+    await expect(hudlProjectCard.getByText('CI/CD Test Automation', { exact: true })).toBeVisible();
+    await expect(hudlProjectCard.getByText('Python Selenium framework for Hudl.com')).toBeVisible();
+    await expect(hudlProjectCard.locator('.tech-tag').getByText('pytest', { exact: true })).toBeVisible();
+    await expect(hudlProjectCard.getByRole('link', { name: 'View Repository' })).toHaveAttribute('href', 'https://github.com/jhheidner/Hudl');
     
     // Verify Sony Playwright Tests project
     const sonyProjectCard = page.locator('.project-card').filter({ hasText: 'Sony Playwright Tests' });
